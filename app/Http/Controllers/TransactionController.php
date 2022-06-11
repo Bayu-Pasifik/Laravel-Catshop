@@ -15,7 +15,7 @@ class TransactionController extends Controller
         return view('transaction.transaction-entry');
     }
     // function untuk insert data
-    function upload(Request $request) {
+    public function upload(Request $request) {
         $this->validate($request, [
             'nama' => 'required',
             'jenis' => 'required',

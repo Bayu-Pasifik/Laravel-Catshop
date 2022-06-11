@@ -31,6 +31,7 @@
                 <h3>Input Transaction</h3>
                 <div class="form-login">
                     <form action="{{ url('/transaction/upload') }}" method="POST">
+                        {{ csrf_field() }}
                         <label for="nama">Nama</label>
                         <input class="input" type="text" name="nama" id="nama" placeholder="Nama" />
                         <label for="jenis">Jenis</label>
