@@ -28,7 +28,7 @@
             <div class="content">
                 <h3>Trasaction</h3>
                 <button type="button" class="btn btn-tambah">
-                    <a href="transaction-entry.php">Tambah Data</a>
+                    <a href="{{ url('/transaction/tambah') }}">Tambah Data</a>
                 </button>
                 <table class="table-data">
                     <thead>
@@ -41,6 +41,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($transaction as $tr)
+                        <td>{{ $tr->nama }}</td>
+                        <td>{{ $tr->jenis }}</td>
+                        <td>{{ $tr->harga }}</td>
+                        <td>{{ $tr->tgl }}</td>
+                        <td>
+                            <a href="/transaction/edit/{{ $tr->id_transaction }}">Edit</a>
+                            <a href="/transaction/hapus/{{ $tr->id_transaction }}">Hapus</a>
+                        </td>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
