@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,16 +31,10 @@ Route::get('/categories/noDelete', [CategoriesController::class, 'noDelete']);
 
 
 
-Route::get('transaction', function () {
-    return view('/transaction/transaction');
-});
-
-Route::get('transaction-entry', function () {
-    return view('/transaction/transaction-entry');
-});
-Route::get('transaction-edit', function () {
-    return view('/transaction/transaction-edit');
-});
-Route::get('transaction-hapus', function () {
-    return view('/transaction/transaction-hapus');
-});
+Route::get('/transaction', [TransactionController::class, 'tampil']);
+Route::get('/transaction/tambah', [TransactionController::class, 'tambah']);
+Route::post('transaction/upload', [TransactionController::class, 'upload']);
+Route::get('transaction/edit{id_transaction}', [TransactionController::class, 'edit']);
+Route::put('transaction/update{id_transaction}', [TransactionController::class, 'update']);
+Route::get('transaction/delete/{id_transaction}', [TransactionController::class, 'hapus']);
+Route::get('transaction/noDelete', [TransactionController::class, 'noDelete']);

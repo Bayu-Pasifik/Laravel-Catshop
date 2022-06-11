@@ -18,7 +18,7 @@
         <div class="sidebar">
             <a href="../admin.php">Home</a>
             <a href="../categories/categories.php">Categories</a>
-            <a href="transaction.php">Transaction</a>
+            <a href="{{ url('/transaction/tambah') }}">Transaction</a>
         </div>
         <div class="right_content">
             <div class="navbar">
@@ -30,7 +30,7 @@
             <div class="content">
                 <h3>Input Transaction</h3>
                 <div class="form-login">
-                    <form action="transaction-proses.php" method="POST">
+                    <form action="{{ url('/transaction/upload') }}" method="POST">
                         <label for="nama">Nama</label>
                         <input class="input" type="text" name="nama" id="nama" placeholder="Nama" />
                         <label for="jenis">Jenis</label>
