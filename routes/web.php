@@ -36,5 +36,6 @@ Route::get('/transaction/tambah', [TransactionController::class, 'tambah']);
 Route::post('transaction/upload', [TransactionController::class, 'upload']);
 Route::get('transaction/edit/{id_transaction}', [TransactionController::class, 'edit']);
 Route::put('transaction/update/{id_transaction}', [TransactionController::class, 'update']);
-Route::get('transaction/delete/{id_transaction}', [TransactionController::class, 'hapus']);
+Route::get('transaction/hapus/{id_transaction}', [TransactionController::class, 'hapus']);
+Route::get('transaction/delete/{id_transaction}', [TransactionController::class, 'delete']);
 Route::get('transaction/noDelete', [TransactionController::class, 'noDelete']);

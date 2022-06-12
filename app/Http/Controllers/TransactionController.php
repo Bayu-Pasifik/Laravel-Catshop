@@ -57,8 +57,8 @@ class TransactionController extends Controller
     }
 
     function hapus($id_transaction) {
-        $transaction = Category::find($id_transaction);
-        return view('transaction.transaction-hapus', compact('transction'));
+        $transaction = Transaction::find($id_transaction);
+        return view('transaction.transaction-hapus', compact('transaction'));
     }
 
     function delete($id_transaction) {
@@ -66,11 +66,11 @@ class TransactionController extends Controller
         $transaction = Transaction::find($id_transaction);
         // hapus data
         $transaction->delete();
-        return redirect('/transction');
+        return redirect('/transaction');
     }
 
     function noDelete() {
-        return redirect('/transcation')->with('error', 'Data tidak dapat dihapus');
+        return redirect('/transaction')->with('error', 'Data tidak dapat dihapus');
     }
   
 }
