@@ -53,7 +53,7 @@ class TransactionController extends Controller
         $transaction->tgl = $request->tgl;
 
         $transaction->save();
-        return redirect('/transaction').with('success', 'Data berhasil diubah');
+        return redirect('/transaction') -> with('success', 'Data berhasil diubah');
     }
 
     function hapus($id_transaction) {
